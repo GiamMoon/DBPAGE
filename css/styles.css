@@ -6,6 +6,8 @@
     --morado: #d5b3ff;
     --azul: #0000ff;
 
+    --fuentePrincipal: 'Roboto', sans-serif;
+    --fuenteSecundaria: 'Lato', sans-serif;
 
 }
 
@@ -19,6 +21,7 @@ html{
 }
 
 body{
+    font-family: var(--fuentePrincipal);
     font-size: 1.6rem;
     line-height: 1.5;
 }
@@ -27,6 +30,7 @@ body{
     max-width: 1200rem;
     width: 95%;
     margin: 0 auto;
+    padding-top: 12rem;
 }
 
 
@@ -36,11 +40,19 @@ img{
     height: auto;
 }
 
+
 .navegacion{
     display: flex;
     align-items: center;
     gap: 3rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.189) ;
+    box-shadow: 1px 1px 10px#000000;
+    position: fixed;
+    top: 0; 
+    left: 2.5%; 
+    width: 95%; 
+    background-color: white; 
+    z-index: 1000;
 }
 
 .logo{
@@ -60,6 +72,62 @@ img{
     font-size: 2.5rem;
 }
 
+.menu-completo{
+    display: none;
+}
+
+@media (min-width: 992px) { 
+
+    .menu-opcion{
+        display: none;
+    }
+
+    .menu-completo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        
+    }
+
+    .menu-completo a{
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .menu-opcion-completo a:hover{
+        color:rgb(203, 3, 46)
+    }
+
+    .menu-opcion-completo a,
+    .menu-ingreso a{
+        padding: .5rem;
+    }
+
+    .menu-ingreso a:first-of-type{
+        color: var(--azul);
+    }
+
+    .menu-opcion-completo-mas{
+        display: inline-flex;
+    }
+
+    .menu-opcion-completo-mas a{
+        color: var(--rojo);
+    }
+
+    .menu-opcion-completo-mas a:hover{
+        color: var(--rojo);
+    }
+
+    .menu-opcion-completo-mas img {
+        filter: invert(53%) sepia(64%) saturate(3735%) hue-rotate(335deg) brightness(101%) contrast(102%);
+    }
+    
+}
+
 .opciones{
     padding: 2rem 0;
 }
@@ -70,6 +138,10 @@ img{
     font-size: 2rem;
     padding: 0 1rem;
     font-weight: bold;
+}
+
+.opciones a:hover{
+    color: #696d00;
 }
 
 .opciones a:first-child{
